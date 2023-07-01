@@ -18,7 +18,7 @@ const StUpperTemplate = styled.div`
   width: 100%;
   display: block; // 이거 왜 필요한지 알아보자
   box-sizing: border-box; // 이거도 왜 필요한지 알아보자
-
+  height: 70vh;
   h1 {
     box-sizing: border-box;
     color: white;

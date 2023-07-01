@@ -1,26 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import { useInput } from "../../hooks/useInput";
-
+import axios from "axios";
 function SearchInput() {
   const [input, setInput] = useState("");
+  const [data, setData] = useState([]);
 
   const onChange = (e) => {
     setInput(e.target.value);
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
   };
 
   return (
-    <form onSubmit={onsubmit}>
-      <StSearchInput
-        placeholder="search"
-        value={input}
-        onChange={(e) => onChange(e)}
-      />
-      ;
+    <form onSubmit={onSubmit}>
+      <StSearchInput placeholder="search" value={input} onChange={onChange} />
     </form>
   );
 }
@@ -41,7 +36,7 @@ const StSearchInput = styled.input`
   font-size: 1rem;
   line-height: 1.6;
   ::placeholder {
-    color: #fff;
+    color: #fff; // 이거 안되는 이유
   }
 `;
 
