@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { useInput } from "../../hooks/useInput";
+
 function SearchInput() {
-  return <StSearchInput placeholder="search" />;
+  return <StSearchInput placeholder="search" onSubmit={useInput} />;
 }
 
 const StSearchInput = styled.input`
@@ -23,4 +25,5 @@ const StSearchInput = styled.input`
     color: #fff;
   }
 `;
+
 export default SearchInput;
