@@ -4,13 +4,8 @@ import LowerTemplate from './layout/LowerTemplate';
 function App() {
   return (
     <>
-    <div className='UpperBox'>
       <UpperTemplate />
-    </div>
-    <div className='LowerBox'>
       <LowerTemplate />
-    </div>  
-      
     </>
   );
 }

@@ -19,5 +19,8 @@ const StSearchInput = styled.input`
   color: #fff;
   font-size: 1rem;
   line-height: 1.6;
+  ::placeholder {
+    color: #fff;
+  }
 `;
 export default SearchInput;
