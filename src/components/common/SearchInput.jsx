@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { useInput } from "../../hooks/useInput";
+// import { useInput } from "../../hooks/useInput";
 
 function SearchInput() {
-  return <StSearchInput placeholder="search" onSubmit={useInput} />;
+  const [input, setInput] = useState("");
+
+  const onChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <form onSubmit={onsubmit}>
+      <StSearchInput
+        placeholder="search"
+        value={input}
+        onChange={(e) => onChange(e)}
+      />
+      ;
+    </form>
+  );
 }
 
 const StSearchInput = styled.input`
