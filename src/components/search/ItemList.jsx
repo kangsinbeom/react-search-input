@@ -1,8 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
+import Item from "./Item";
 
 function ItemList() {
-  return <StList>asdfasdfasdfs</StList>;
+  const fetchData = useSelector((state) => state.fetchData);
+  return (
+    <StList>
+      {fetchData.map((data, index) => (
+        <Item key={index} data={data} />
+      ))}
+    </StList>
+  );
 }
 
 const StList = styled.div`
