@@ -2,8 +2,23 @@
   "todos": [
     {
       "id": 1,
-      "title": "json-server",
+      "title": "json-server1",
       "content": "json-server를 배워봅시다."
+    },
+    {
+      "id": 2,
+      "title": "json-server2",
+      "content": "json-server를 start."
+    },
+    {
+      "id": 3,
+      "title": "json-serve3r",
+      "content": "json-server를 lean."
+    },
+    {
+      "id": 4,
+      "title": "json-serve4r",
+      "content": "json-server를 bae."
     }
   ]
 }
