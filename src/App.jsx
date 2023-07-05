@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
-import api, { kakaoSearch } from "./apis/api";
+import { kakaoSearch } from "./apis/api";
 import SearchItem from "./components/search/SearchItem";
 import Outline from "./layout/Outline";
+import SearchInput from "./components/search/SearchInput";
+
 function App() {
   const [input, setInput] = useState("");
   const [data, setData] = useState(null);
@@ -16,9 +18,7 @@ function App() {
   return (
     <div style={{ backgroundColor: "#e2dee5" }}>
       <h1>Posts</h1>
-      <form onSubmit={(e) => onSubmitHandler(e)}>
-        <input value={input} onChange={(e) => setInput(e.target.value)} />
-      </form>
+      <SearchInput />
       <div>
         {data?.map((item, index) => (
           <SearchItem key={index} item={item} />
