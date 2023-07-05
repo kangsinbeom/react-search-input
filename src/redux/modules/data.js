@@ -8,7 +8,9 @@ const dataSlice = createSlice({
   initialState,
   reducers: {
     setData: (state, action) => {
-      state = action.payload;
+      console.log("액션은", action.payload)
+      state = action.payload
+      
     }
   }
 })

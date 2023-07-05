@@ -8,7 +8,7 @@ const instance = axios.create({
       Authorization: `KakaoAK a62f8adfb182625e79bba243fd847be3`,
     }
 });
-console.log("이게 에러인가?", process.env.REST_API_KEY)
+
 export const kakaoSearch = (query) => {
   return instance.get("/web", {
     params: {

@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-function SearchItem({ item }) {
-  const { contents, title, url } = item;
+function SearchItem({ data }) {
+  const { title } = data;
+  console.log("data는 ", data);
+
   return <StyledSearchItem>{title}</StyledSearchItem>;
 }
 
