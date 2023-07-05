@@ -1,25 +1,30 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import api, { kakaoSearch } from "./apis/api";
-
+import SearchItem from "./components/search/SearchItem";
+import Outline from "./layout/Outline";
 function App() {
   const [input, setInput] = useState("");
   const [data, setData] = useState(null);
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log("input : ", input);
     const kakao = await kakaoSearch(input);
-    setData(await kakaoSearch(input));
+    setData(kakao.data.documents);
   };
-  console.log("data :", data);
+
   return (
-    <>
+    <div style={{ backgroundColor: "#e2dee5" }}>
+      <h1>Posts</h1>
       <form onSubmit={(e) => onSubmitHandler(e)}>
         <input value={input} onChange={(e) => setInput(e.target.value)} />
-        <button>검색</button>
       </form>
-    </>
+      <div>
+        {data?.map((item, index) => (
+          <SearchItem key={index} item={item} />
+        ))}
+      </div>
+    </div>
   );
 }
 // 왜 changeHandler는 ()=> onChangeHandler로 쓰면 안되는가??
